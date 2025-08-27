@@ -1,0 +1,658 @@
+/* .app {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  grid-template-rows: 64px 1fr auto;
+  height: 100vh;
+} */
+
+/* layout  */
+
+.app_container {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.content_wrapper {
+  flex-grow: 1;
+}
+
+.content {
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+}
+
+.main_layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.Aside_right {
+  width: 30%;
+}
+
+.segment-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+.segment-tabs .seg{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #E6F1FF;
+  color: #2570CA;
+  padding: 0;
+}
+
+.segment-tabs .seg .bx{
+  font-size: large;
+}
+
+.candidate_info_box {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  background: #fefefe;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.candidate_info_box p {
+  display: grid;
+  column-gap: 50px;
+  grid-template-columns: 1fr 1fr;
+  color: #343a40;
+  font-weight: 590;
+  font-style: Semibold;
+  font-size: 13px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.candidate_details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.candidate_profile {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.socials_icons {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.2rem;
+}
+
+.candidate_name {
+  color: #343a40;
+}
+
+.profile_img {
+  width: 64px;
+  height: 64px;
+}
+
+.candidate_info_box p {
+  margin-block: 0;
+}
+
+.candidate_section {
+  background: #fff;
+  padding: 20px;
+  padding-top: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.candidate_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.candidate_name_block h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.job_title,
+.location {
+  color: #666;
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.Location_details {
+  display: flex;
+  gap: 10px;
+}
+
+.Location_details p {
+  margin-block: 0;
+  font-size: 13px;
+  color: #495057;
+}
+
+/* Parent container */
+.header_bar {
+  display: flex;
+  justify-content: space-between; /* left vs right */
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #fff;
+  margin-bottom: 0.5rem;
+}
+
+/* Breadcrumb styles */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #495057;
+}
+.breadcrumb .link {
+  color: #0b49c7;
+  cursor: pointer;
+}
+.breadcrumb .separator {
+  color: #888;
+}
+.breadcrumb .id-tag {
+  background: #f1f3f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Buttons */
+.action_buttons {
+  display: flex;
+  gap: 10px;
+}
+.update_btn,
+.contact_btn {
+  padding: 8px 12px;
+  background-color: #ffffff;
+  color: #343a40;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.update_btn:hover,
+.contact_btn:hover {
+  background-color: #f8f9fa;
+}
+
+
+.score_badges {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: bold;
+}
+
+.profile_pic img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.candidate_details_grid {
+  margin-block: 20px;
+}
+
+.detail_column {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+}
+
+.detail_column p {
+  margin: 6px 0;
+}
+.tabs {
+  display: flex;
+  gap: 2px;
+  border-top: 1px solid  #e2e8f0;
+  margin-top: 6px;
+  padding: 0 8px;
+  background: #e9ecef;
+}
+
+.tab {
+  padding: 10px 12px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  color: #343a40;
+
+  font-size: 13px;
+}
+
+.tab:hover {
+  background: #f6f8fe;
+}
+
+.tab.active {
+  border-color: var(--primary, #0b49c7);
+  color: #0b49c7;
+  background: #ffff;
+}
+
+.tabpanel {
+  padding: 14px;
+}
+
+.jobs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.job-item {
+  display: grid;
+  grid-template-columns: 40px auto auto auto auto auto;
+  gap: 30px;
+  align-items: center;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--stroke, #e2e8f0);
+  border-radius: 12px;
+}
+
+.job-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fbddb3;
+  display: grid;
+  place-items: center;
+  color: #f08c00;
+}
+
+.job-title {
+  font-weight: 600;
+}
+
+.job-sub {
+  font-size: 12px;
+  color: var(--muted, #64748b);
+}
+
+.pill {
+  background: #f8f9FA;
+  border: 1px solid var(--stroke, #e2e8f0);
+  padding: 3px 7px;
+  font-size: 12px;
+  border-radius: 5px;
+  color: #475569;
+  text-align: center;
+}
+
+.switch {
+  position: relative;
+  width: 38px;
+  height: 22px;
+  background: #e5e7eb;
+  border-radius: 999px;
+}
+
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.switch.on {
+  background: #c7ddff;
+}
+
+.switch.on::after {
+  left: 19px;
+}
+
+.company {
+  color: #666;
+}
+
+.job_actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status {
+  background: #0078d4;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.view_btn {
+  padding: 8px 12px;
+  background: #CED4DA;
+  border: 1px solid #0078d4;
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Note content text */
+.note-text {
+  color: #334155;
+}
+
+/* Meta text under notes: user, timestamp */
+.note-meta {
+  color: var(--muted);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+/* Small dot separator */
+.dot {
+  width: 3px;
+  height: 3px;
+  background: #cbd5e1;
+  border-radius: 50%;
+  margin: 0 6px;
+}
+
+.custom-toggle {
+  width: 30.4px;
+  height: 16px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.custom-toggle::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  transition: left 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.custom-toggle.on {
+  background: #4f46e5;
+}
+
+.custom-toggle.on::after {
+  left: 16px;
+}
+
+/* Tabs */
+.seg-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 10px;
+  margin-bottom: 16px;
+  background: #E9ECEF;
+  flex-wrap: nowrap;   /* make sure they stay in one line */
+  overflow-x: auto;    /* allow scroll if tabs overflow */
+}
+
+.seg {
+  padding: 8px 16px; /* instead of width/height */
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "SF Pro", sans-serif;
+  font-weight: 590;        /* custom semibold */
+  font-style: normal;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #333;
+  white-space: nowrap; /* prevent text breaking */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.seg.active {
+  background: #eef4ff;
+  color: #2979ff;
+  border: 1px solid #2979ff;
+}
+
+/* Feed */
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Note Card */
+.note-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.note-header {
+  margin-bottom: 8px;
+}
+
+.tag {
+  display: inline-block;
+  background: #f0f2f5;
+  color: #333;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-right: 6px;
+}
+
+.note-text {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 13px;
+  color: #2979ff;
+  margin-bottom: 8px;
+}
+
+.row.meta {
+  font-size: 12px;
+  color: #666;
+}
+
+.dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: #888;
+  border-radius: 50%;
+  margin: 0 6px;
+}
+
+
+.candidate_contact_bar {
+  max-width: 870px;        /* allow responsiveness */
+  min-height: 40px;        /* give breathing room instead of fixed 29px */
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 15px;
+  font-family: Arial, sans-serif;
+  border-radius: 8px;
+  margin: 20px auto;       /* centers inside page and scrolls normally */
+  position: relative;      /* no absolute positioning */
+  box-sizing: border-box;
+}
+
+.contact_item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #000;
+}
+
+.contact_item i {
+  font-size: 16px;
+  color: #555;
+}
+
+    .candidate_right_actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;          /* space between buttons */
+  margin-left: auto;  /* pushes block to the right */
+}
+
+.btn_contact_linked {
+  background: #fdeaea;
+  border: 1px solid #f5c2c2;
+  color: #d9534f;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: default;
+}
+
+.icon_button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon_button i {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #495057;
+}
+.breadcrumb .link {
+  color: #0b49c7;
+  cursor: pointer;
+}
+.breadcrumb .separator {
+  color: #888;
+}
+.breadcrumb .id-tag {
+  background: #f1f3f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Contact bar fix */
+.candidate_contact_bar {
+  margin-top: 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* Feed text smaller */
+.note-text {
+  font-size: 13px;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+
+.profile-update-container {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+  position: relative;
+}
+
+.profile-content {
+  margin-bottom: 10px;
+}
+
+.profile-buttons {
+  display: flex;
+  justify-content: flex-end; /* push buttons to right */
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.prev {
+  background-color: #ddd;
+}
+
+.next {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+
+.text_muted{
+  color: #495057;
+}

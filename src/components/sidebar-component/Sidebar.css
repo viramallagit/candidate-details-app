@@ -1,0 +1,39 @@
+/* Sidebar container */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  background: #143E6F;
+  gap: 0.5rem;
+}
+
+/* Each icon container */
+.side-icon {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Active icon */
+.side-icon.active {
+  background-color: #0E2C52;
+  border-radius: 50%;
+}
+
+/* Icon hover effect */
+.side-icon:hover {
+  background-color: #1a4d8f;
+  border-radius: 50%;
+}
+
+.Horizontal_divider{
+    background: #1070CA;
+    height: 2px;
+    width: 100%;
+}

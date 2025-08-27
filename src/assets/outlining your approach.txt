@@ -1,0 +1,63 @@
+outlining your approach:
+
+1. Approach
+🔹 UI/UX Development
+
+Followed the provided Figma wireframe as the base reference.
+
+Broke down the page into reusable Vue 3 components (e.g., CandidateCard.vue, Tabs.vue, EditCandidateForm.vue).
+
+Used Vanilla CSS + SCSS for styling (no CSS frameworks used).
+
+Ensured responsiveness with flex, grid, and media queries for different screen sizes.
+
+🔹 State Management
+
+Used Pinia for global state management.
+
+Stored candidate details in Pinia store.
+
+Implemented an edit flow:
+
+Click pencil icon → opens editable form.
+
+User edits details → submit updates store.
+
+UI reflects updated state dynamically.
+
+🔹 API Integration (Mocked)
+
+Simulated an API call for fetching candidate details (GET /candidate/:id).
+
+Used a mocked service file returning JSON data to replicate backend behavior.
+
+For updating details, simulated a PUT call (without persistence since this is front-end only).
+
+🔹 Reusability & Clean Code
+
+Used Vue 3 Composition API with setup() for better code organization.
+
+Created composables (useCandidate.ts) for handling candidate logic separately from UI.
+
+Ensured component modularity for easy extension.
+
+
+2. Challenges
+
+CSS without frameworks
+
+Had to carefully use Vanilla CSS/SCSS for spacing, layouts, and responsiveness instead of relying on Tailwind/Bootstrap.
+
+Solved by breaking SCSS into smaller files (e.g., _variables.scss, _mixins.scss, _layout.scss).
+
+State synchronization
+
+Needed to ensure that editing candidate details updates across all components.
+
+Solved using Pinia store instead of local component variables.
+
+Form validation
+
+Wireframe didn’t specify validation rules.
+
+Added basic inline validation (e.g., required fields, email format check).
